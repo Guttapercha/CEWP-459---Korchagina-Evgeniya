@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src='jquery.mask.min.js'></script>
+        <script src='contactlist_2.js'></script>
+    </head>
+    <body onload='getList()'>
+        
+        <h1>Contact Manager</h1><img src='Call.png' width="10%">
+        <hr>
+        
+        <!--sorting-->
+       
+<form method="post" id="sortForm">
+    <fieldset>
+        <legend>Sort contacts...  </legend>
+
+        <div class="radio">
+            <input type="radio" id="name_as" name="sorting" value="name_as" onclick="getListSorted();">
+            <label for="name_as"> by name: A - Z</label>
+        </div>
+        <div class="radio">
+            <input type="radio" id="name_desc" name="sorting" value="name_desc" onclick="getListSorted();">
+            <label for="name_desc"> by name: Z - A</label>
+        </div>
+
+        <div class="radio">
+            <input type="radio" id="phone_as" name="sorting" value="phone_as" onclick="getListSorted();">
+            <label for="phone_as"> by phone: 0 - 9</label>
+        </div>
+        
+         <div class="radio">
+            <input type="radio" id="phone_desc" name="sorting" value="phone_desc" onclick="getListSorted();">
+            <label for="phone_desc"> by phone: 9 - 0</label>
+        </div>
+    </fieldset>
+</form>   
+        
+
+        
+        
+        <div class="container-fluid">
+            <div class='row'>
+                <div class="col-lg">
+                    <span id='listResults'></span>
+                    <p>
+                        <!--//refresh//-->
+                        <a  onclick='getList();' class='btn btn-info' href='#'>Refresh This Table</a>
+                    </p>
+                </div>
+                <!--//adding a list//-->
+                <div class="col-lg-4">
+                    <form action='contactlist_2_add.php' method='POST' id='addForm'>
+                        <h2>Add Record</h2>
+                        <div class="form-group">
+                            <label for="cName">Contact Name</label>
+                            <input type='text' class="form-control" name='addName' id="addName">
+                        </div>
+                        <div class="form-group">
+                            <label for="cName">Contact Phone</label>
+                            <input type='text' class="form-control" name ='addPhone' id="addPhone">
+                        </div>    
+                        <input class="btn btn-primary" type='submit' name='submit_addcontact'>
+                    </form>
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col-lg">
+                    <span id='warningSpan'></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ */
+
+#sortForm{
+	margin-left: 20px;
+	background-color: beige;
+	width: 200px;
+}
+.radio {
+	background-color: skyblue;
+	border: 2px solid darkblue;
+	margin: 5px;
+}
+.radio:hover {
+	padding: 2px;
+	font-weight: bold;
+	background-color: palevioletred;
+}
